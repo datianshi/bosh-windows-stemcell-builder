@@ -5,6 +5,7 @@ module S3
   class Client
     def initialize(aws_access_key_id:, aws_secret_access_key:, aws_region:, endpoint:)
       Aws.use_bundled_cert!
+      Aws.config.update(force_path_style: true)
       credentials =  Aws::Credentials.new(aws_access_key_id, aws_secret_access_key)
       @s3 = Aws::S3::Client.new(region: aws_region, credentials: credentials, endpoint: endpoint)
       @s3_resource = Aws::S3::Resource.new(region: aws_region, credentials: credentials, endpoint: endpoint)
