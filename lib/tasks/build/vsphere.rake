@@ -157,7 +157,8 @@ namespace :build do
       aws_region: aws_region,
       input_bucket: Stemcell::Builder::validate_env('INPUT_BUCKET'),
       output_bucket: Stemcell::Builder::validate_env('OUTPUT_BUCKET'),
-      vmx_cache_dir: Stemcell::Builder::validate_env('VMX_CACHE_DIR')
+      vmx_cache_dir: Stemcell::Builder::validate_env('VMX_CACHE_DIR'),
+      vmx_cache_dir: Stemcell::Builder::validate_env('ENDPOINT'),
     )
 
 
