@@ -114,7 +114,7 @@ module Packer
       def provisioners
         pre = [
           Base.pre_provisioners(@os, skip_windows_update: @skip_windows_update),
-          Provisioners::lgpo_exe,
+          # Provisioners::lgpo_exe,
           Provisioners.install_agent('vsphere').freeze,
         ]
         download_windows_updates = @skip_windows_update?[]:[Provisioners.download_windows_updates(@output_directory).freeze]
